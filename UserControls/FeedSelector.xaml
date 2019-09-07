@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="Twarp.UserControls.FeedSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Twarp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="400">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="1" Background="White" Padding="20,0,20,0">
+        <StackPanel VerticalAlignment="Center">
+            <ComboBox x:Name="day" HorizontalAlignment="Center" Margin="0,44,0,0" Width="179" />
+            <TextBlock x:Name="time" Margin="0,40,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="64" />
+            <Slider x:Name="timeSlider" Margin="0,0,0,40" Maximum="1439" SnapsTo="Ticks" TickFrequency="5" Width="179" IsThumbToolTipEnabled="False" ValueChanged="Slider_ValueChanged"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,40">
+                <TextBlock Text="#" FontSize="24"/>
+                <TextBox x:Name="txHashtag" TextWrapping="Wrap" Width="179" />
+                <Button x:Name="addfav" Height="25" Width="25" Margin="10,0,0,0" Click="addfav_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Assets/icons/fav.png" />
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+            <Button x:Name="twarp" Content="Twarp!" HorizontalAlignment="Center" VerticalAlignment="Top" Click="twarp_Click" Margin="0,0,0,40"/>
+            <!-- TextBlock x:Name="tweetID" HorizontalAlignment="Left" Margin="96,445,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" / -->
+        </StackPanel>
+    </Grid>
+</UserControl>

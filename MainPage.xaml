@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="Twarp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Twarp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Required">
+    <Grid>
+        <SplitView x:Name="MainSplitView" DisplayMode="Overlay" IsPaneOpen="False" VerticalAlignment="Stretch">
+            <SplitView.Pane>
+                <StackPanel Background="LightGray" x:Name="menuContent" Orientation="Vertical">
+                    <Button x:Name="feeder" Margin="20,50,20,0" Content="New feed" Click="feeder_Click" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" />
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,12,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" x:Name="mainStack" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                    <!-- StackPanel Orientation="Horizontal" Grid.Row="1" x:Name="mainStack" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/ -->
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+        <Button Grid.Row="0" x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="30" Height="30" Click="HamburgerButton_Click" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
